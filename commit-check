@@ -12,7 +12,9 @@ sub err {
     $status = 1;
 }
 
-while (<>) {
+open(my $commitfile, "<", $ARGV[0]) or die "Couldn't open $ARGV[0]";
+
+while (<$commitfile>) {
     next if /^#/;                 # Discard comments
     next if $lineno == 0 && /^$/; # Discard leading empty lines
     $lineno++;                    # Start at 1, so increment first
@@ -27,4 +29,5 @@ while (<>) {
     err "Longer than 80 characters" if /^.{73,}/;
 }
 
+close $commitfile;
 exit $status;
