@@ -1,0 +1,3 @@
+This line is the commit subject, it be 50 char long
+
+This is a regular line. It really should be 72 characters long. Let's see

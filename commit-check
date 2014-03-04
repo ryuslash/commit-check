@@ -1,0 +1,30 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+my $lineno = 0;
+my $status = 0;
+
+sub err {
+    my ($msg) = @_;
+
+    print STDERR "Error on line $lineno (actual line $.): ". $msg ."\n";
+    $status = 1;
+}
+
+while (<>) {
+    next if /^#/;                 # Discard comments
+    next if $lineno == 0 && /^$/; # Discard leading empty lines
+    $lineno++;                    # Start at 1, so increment first
+
+    if ($lineno == 1) {
+        err "Not capitalized" if /^[^[:upper:]]/;
+        err "Longer than 50 characters" if /^.{51,}/;
+        next;
+    }
+
+    err "Should be empty" if $lineno == 2 && /.+/;
+    err "Longer than 80 characters" if /^.{73,}/;
+}
+
+exit $status;

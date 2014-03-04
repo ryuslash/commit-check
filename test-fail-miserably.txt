@@ -1,0 +1,4 @@
+# This is a comment and should not be checked at all. It can be as long as it wants to be.
+this, on the other hand, is not a comment. It is also the first line and should not be longer than 50 characters.
+This line should be empty
+This line is a regular text line. It should not be longer than 80 characters. We should check that.
