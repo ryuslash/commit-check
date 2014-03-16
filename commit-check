@@ -26,7 +26,7 @@ while (<$commitfile>) {
     }
 
     err "Should be empty" if $lineno == 2 && /.+/;
-    err "Longer than 80 characters" if /^.{73,}/;
+    err "Longer than 72 characters" if /^.{73,}/;
 }
 
 close $commitfile;
