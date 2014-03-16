@@ -16,6 +16,49 @@
 # You should have received a copy of the GNU General Public License
 # along with commit-ccheck. If not, see <http://www.gnu.org/licenses/>.
 
+=head1 Commit check
+
+This is a simple commit style checker. It is made to be used as a git
+C<commit-msg> hook. It expects the name of the file to check as the
+first command-line argument. The style that's checked is based on
+tpope's L<A Note About Git Commit
+Messages|http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html>.
+
+Currently there are 4 style errors that are checked for.
+
+=over
+
+=item 1
+
+The first character of the first line of the commit message should be
+capitalized.
+
+=item 2
+
+The first line of the commit message should be no longer than 50
+characters.
+
+=item 3
+
+The second line of the commit message should be empty.
+
+=item 4
+
+No line should be longer than 72 characters.
+
+=back
+
+All comments are skipped and so is all whitespace at the beginning of
+the file.
+
+If any of the error conditions are encountered the program will exit
+with a non-C<0> status. This has the effect of stopping git from
+committing the message when this program is used as a C<commit-msg>
+hook. Each error condition encountered also prints a message to the
+standard error stream.
+
+=cut
+
 use strict;
 use warnings;
 
