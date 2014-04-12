@@ -33,6 +33,24 @@
     executable, or a script running this program (passing along all
     arguments).
 
+*** Usage
+
+    When used as a git ~commit-msg~ hook it should just be a question of
+    getting it in the right place and it'll work. If, however, you
+    have another use for it and need to run it manually, there are
+    some command-line options that you can use:
+
+    - =-h= :: Show a short help message to help you along.
+    - =-0= :: Always exit with a ~0~ exit status.
+
+    Some tools, such as the before-mentioned Flycheck, don't like it
+    when the back-end tool exits with a non-zero exit status and think
+    that means that the tool failed to run. To keep such tools happy
+    the =-0= can be used.
+
+    commit check expects the file to check as the last argument on the
+    command line (or actually, the first non-option argument).
+
 ** License
 
    This project is licensed under the GNU GPLv3, its terms and
