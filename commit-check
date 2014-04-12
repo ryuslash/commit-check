@@ -88,6 +88,7 @@ encountered also prints a message to the standard error stream.
 
 use strict;
 use warnings;
+use File::Basename;
 use Getopt::Std;
 
 my $lineno = 0;
@@ -97,7 +98,7 @@ my %arguments = ();
 sub err {
     my ($msg) = @_;
 
-    print STDERR "Error on line $lineno (actual line $.): ". $msg ."\n";
+    print STDERR basename($0) .":". $ARGV[0] .":$.: ". $msg ."\n";
     $status = 1;
 }
 
