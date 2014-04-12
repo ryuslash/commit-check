@@ -1,0 +1,14 @@
+* commit-check Installation Guide
+
+** For manual use
+
+   To get this project up and running make sure you have perl
+   installed and that commit-check is somewhere in your ~PATH~.
+
+** As git hook
+
+   Place the commit-check executable file in the ~.git/hooks~ directory
+   of your project, with the name ~commit-msg~. It doesn't need to be
+   the actual executable, it can also be a (soft) link to the
+   executable, or a script running this program (passing along all
+   arguments).
