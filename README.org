@@ -8,18 +8,11 @@
   style checked by commit-check, or as a syntax checker back-end (like
   [[http://flycheck.readthedocs.org/en/latest/][Flycheck]]).
 
-  The file [[file:INSTALL.org]] contains instructions on how to install
-  commit-check on your system.
-
   The entire code for the project is currently contained in the
-  [[file:commit-check]] file. The files [[file:test-pass.txt]],
-  [[file:test-fail-barely.txt]] and [[file:test-fail-miserably.txt]] are used
-  for testing purposes. They contain and explain certain situations
-  that can occur when writing commits that may or may not cause errors
-  to be reported.
-
-  This project is licensed under the GNU GPLv3, its terms and
-  conditions can be found in [[file:COPYING]].
+  ~commit-check~ file. The files ~test-pass.txt~, ~test-fail-barely.txt~ and
+  ~test-fail-miserably.txt~ are used for testing purposes. They contain
+  and explain certain situations that can occur when writing commits
+  that may or may not cause errors to be reported.
 
 ** Installation
 
@@ -39,3 +32,9 @@
     the actual executable, it can also be a (soft) link to the
     executable, or a script running this program (passing along all
     arguments).
+
+** License
+
+   This project is licensed under the GNU GPLv3, its terms and
+   conditions can be found in the file ~COPYING~ in the project source
+   tree.
