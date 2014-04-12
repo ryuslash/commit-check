@@ -1,3 +1,6 @@
+#+STARTUP: showall
+#+OPTIONS: toc:nil
+
 * commit-check v0.1.0
 
   This is the commit-check project. It is a quick and easy commit
@@ -17,3 +20,22 @@
 
   This project is licensed under the GNU GPLv3, its terms and
   conditions can be found in [[file:COPYING]].
+
+** Installation
+
+   commit-check can either be used manually (or as a back-end to some
+   other tool), or as a git ~commit-msg~ hook to stop you from
+   committing badly styled commit messages.
+
+*** For manual use
+
+    To get this project up and running make sure you have perl
+    installed and that commit-check is somewhere in your ~PATH~.
+
+*** As git hook
+
+    Place the commit-check executable file in the ~.git/hooks~ directory
+    of your project, with the name ~commit-msg~. It doesn't need to be
+    the actual executable, it can also be a (soft) link to the
+    executable, or a script running this program (passing along all
+    arguments).
