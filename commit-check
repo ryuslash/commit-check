@@ -124,13 +124,13 @@ while (<$commitfile>) {
     $lineno++;                    # Start at 1, so increment first
 
     if ($lineno == 1) {
-        err "Not capitalized" if /^[^[:upper:]]/;
-        err "Longer than 50 characters" if /^.{51,}/;
+        err "First line is not capitalized" if /^[^[:upper:]]/;
+        err "First line is longer than 50 characters" if /^.{51,}/;
         next;
     }
 
-    err "Should be empty" if $lineno == 2 && /.+/;
-    err "Longer than 72 characters" if /^.{73,}/;
+    err "Second line should be empty" if $lineno == 2 && /.+/;
+    err "Line is longer than 72 characters" if /^.{73,}/;
 }
 
 close $commitfile;
